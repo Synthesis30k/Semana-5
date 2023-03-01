@@ -1,0 +1,47 @@
+def main():
+    # 1. Create an empty tuple
+    empty_tuple = ()
+
+    # 2. Create a tuple containing names of your sisters and your brothers (imaginary siblings are fine)
+    family_sisters = ('Paula', 'Camila')
+    family_brothers = ('Pablo', 'Camilo')
+
+    # 3. Join brothers and sisters tuples and assign it to siblings
+    family_siblings = family_sisters + family_brothers
+    # 4.How many siblings do you have? 4
+    num_siblings = len(family_siblings)
+    # 5.Modify the siblings tuple and add the name of your father and mother and assign it to family_members
+    parents = ('Heidy', 'Yes')
+    family_members = family_siblings + parents
+    # 6. Unpack siblings and parents from family_members
+    for fam_mem in family_members:
+        print(fam_mem)
+    # 7. Create fruits, vegetables and animal products tuples. Join the three tuples and assign it to a variable
+    # called food_stuff_tp.
+    fruits = ('Apple', 'Orange')
+    vegetables = ('Onion', 'Tomato')
+    animal_products = ('Chicken', 'meat')
+    food_stuff_tp = fruits + vegetables + animal_products
+    # 8. Change the about food_stuff_tp tuple to a food_stuff_lt list
+    food_stuff_lt = list(food_stuff_tp)
+    # 9 Slice out the middle item or items from the food_stuff_tp tuple or food_stuff_lt list.
+    middle_items = food_stuff_lt[2:4]
+    # 10. Delete the food_staff_tp tuple completely
+    del food_stuff_tp
+    # 11.Check if an item exists in tuple:
+    # Check if 'Estonia' is a nordic country
+    # Check if 'Iceland' is a nordic country
+
+    nordic_countries = ('Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden')
+    if 'Estonia' in nordic_countries:
+        estonia_is_nor = True
+    else:
+        estonia_is_nor = False
+    if 'Iceland' in nordic_countries:
+        iceland_is_nor = True
+    else:
+        iceland_is_nor = False
+    print(f'Is Estonia in nordic countries ? {estonia_is_nor}\nIs Iceland in nordic countries ? {iceland_is_nor}')
+
+
+main()

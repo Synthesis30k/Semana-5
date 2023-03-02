@@ -1,0 +1,122 @@
+def main():
+    try:
+        running = True
+        while running:
+            command = int(
+                input('Please select the level ox the exercises to see: \n 1. Lv1 \n 2. Lv2 \n 3. Lv3 \n 0. Exit\n'))
+            match command:
+                case 0:
+                    running = False
+                case 1:
+                    exercise_lv1()
+                case 2:
+                    exercise_lv2()
+                case 3:
+                    exercise_lv3()
+    except ValueError:
+        print('You need to introduce a valid number in the age prompt')
+
+
+def exercise_lv1():
+    # 1. Get user input using input(“Enter your age: ”). If user is 18 or older, give feedback: You are old enough to
+    # drive. If below 18 give feedback to wait for the missing amount of years. Output:
+    age = int(input('Please enter your age: '))
+    if int(age) >= 18:
+        print('Your are old enough to drive')
+    else:
+        time_to_drive = 18 - age
+        print(f'You need {time_to_drive} more years to drive')
+        # 2. Compare the values of my_age and your_age using if … else. Who is older (me or you)? Use input(“Enter your
+        # age: ”) to get the age as input. You can use a nested condition to print 'year' for 1 year difference in age,
+        # 'years' for bigger differences, and a custom text if my_age = your_age. Output:
+    my_age = 26
+    who_is_older = my_age - age
+    if who_is_older > 0:
+        print(f'I am {who_is_older} years older than you')
+    elif who_is_older < 0:
+        print(f'I am {abs(who_is_older)} years younger than you')
+    else:
+        print('We have the same age')
+        # 3. Get two numbers from the user using input prompt. If a is greater than b return a is greater than b,
+        # if a is less b return a is smaller than b, else a is equal to b.
+    a = int(input('Please enter the first number:  '))
+    b = int(input('Please enter the second number:  '))
+    if a > b:
+        print(f'{a} is greater than {b}')
+    elif b > a:
+        print(f'{b} is greater than {a}')
+    else:
+        print('The numbers are the same ')
+
+
+def exercise_lv2():
+    # 1. Write a code which gives grade to students according to theirs scores:
+    grade = int(input('Please enter your grade: '))
+    if grade >= 80:
+        print('Your grade is A')
+    elif 80 > grade >= 70:
+        print('Your grade is B')
+    elif 70 > grade >= 60:
+        print('Your grade is C')
+    elif 60 > grade > 50:
+        print('Your grade is D')
+    else:
+        print('Your grade is F')
+    # 2. Check if the season is Autumn, Winter, Spring or Summer. If the user input is: September, October or November,
+    # the season is Autumn. December, January or February, the season is Winter. March, April or May,
+    # the season is Spring June, July or August, the season is Summer
+    month = input('Enter the month')
+    month = month.lower()
+    if month == 'september' or month == 'november' or month == 'october':
+        print('The season is Autumn')
+    elif month == 'december' or month == 'january' or month == 'february ':
+        print('The season is Winter')
+    elif month == 'march' or month == 'april' or month == 'may':
+        print('The season is Spring')
+    elif month == 'june' or month == 'july' or month == 'august':
+        print('The season is summer')
+    else:
+        print('Invalid month')
+
+
+def exercise_lv3():
+    person = {
+        'first_name': 'Asabeneh',
+        'last_name': 'Yetayeh',
+        'age': 250,
+        'country': 'Finland',
+        'is_marred': True,
+        'skills': ['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+        'address': {
+            'street': 'Space street',
+            'zipcode': '02210'
+        }
+    }
+    # 1.  Check if the person dictionary has skills key, if so print out the middle skill in the skills list.
+    if 'skills' in person.keys():
+        print(person['skills'][3])
+    # 2. Check if the person dictionary has skills key, if so check, if the person has 'Python' skill and print out
+    # the result.
+    if 'Python' in person['skills']:
+        print('The persona has python skills')
+    else:
+        print('The person does not have python skills')
+    # 3. If a person skills has only JavaScript and React, print('He is a front end developer'), if the person skills
+    # has Node, Python, MongoDB, print('He is a backend developer'), if the person skills has React,
+    # Node and MongoDB, Print('He is a fullstack developer'), else print('unknown title') - for more accurate results
+    # more conditions can be nested!
+    if 'Javascript' and 'React' in person['skills']:
+        print('He is a front end developer')
+    if 'Python' and 'MondoDB' and 'Node' in person['skills']:
+        print('He is a backend developer')
+    if 'React' and 'Node' and 'MongoDB' in person['skills']:
+        print('He is a fullstack developer')
+    else:
+        print('unknown title')
+    # 4.  If the person is married and if he lives in Finland, print the information in the following format
+    #     Asabeneh Yetayeh lives in Finland. He is married.
+    if person['is_marred'] and person['country'] == 'Finland':
+        print(f"{person['first_name']} {person['last_name']} lives in {person['country']}. He is married ")
+
+
+main()
